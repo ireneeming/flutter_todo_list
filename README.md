@@ -22,12 +22,14 @@ Todo List App
 
 ## 폴더구조
 
+
+
 /lib
-/models
-/providers
-/screens
-list_screen.dart
-login_screen.dart
-news_screen.dart
-splash_screen.dart
-main.dart
+* /models
+* /providers
+* /screens
+  * list_screen.dart
+  * login_screen.dart
+  * news_screen.dart
+  * splash_screen.dart
+* main.dart
