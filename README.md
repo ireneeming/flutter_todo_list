@@ -1,16 +1,33 @@
 # flutter_todo_list
 
-A new Flutter project.
+Todo List App
 
-## Getting Started
+## 화면
 
-This project is a starting point for a Flutter application.
+1. SplashScreen
+2. LoginScreen
+3. ListScreen
+4. NewsScreen
 
-A few resources to get you started if this is your first Flutter project:
+## 기능
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+1. 로그인 -> 아이디, 비밀번호 입력하면 검증 없이 로그인
+2. 자동 로그인 -> 앱을 다시 열었을 때 로그인 화면 스킵 (SharedPreferences)
+3. Todo 목록보기 (sqlite / Firebase)
+4. Todo 상세보기 (sqlite / Firebase)
+5. Todo 등록하기 (sqlite / Firebase)
+6. Todo 삭제하기 (sqlite / Firebase)
+7. Todo 수정하기 (sqlite / Firebase)
+8. 뉴스 가져와서 보여주기 (API)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 폴더구조
+
+/lib
+/models
+/providers
+/screens
+list_screen.dart
+login_screen.dart
+news_screen.dart
+splash_screen.dart
+main.dart
