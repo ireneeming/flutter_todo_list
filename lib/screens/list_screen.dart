@@ -16,7 +16,6 @@ class _ListScreenState extends State<ListScreen> {
   @override
   void initState() {
     super.initState();
-    print("initState");
     todos = todoDefault.getTodos();
     setState(() {
       isLoading = false;
@@ -44,8 +43,55 @@ class _ListScreenState extends State<ListScreen> {
           ],
         ),
         floatingActionButton: FloatingActionButton(
-          onPressed: () {},
           child: Text('+', style: TextStyle(fontSize: 25)),
+          onPressed: () {
+            showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  String title = '';
+                  String description = '';
+
+                  return AlertDialog(
+                    title: Text('할 일 추가하기'),
+                    content: Container(
+                      height: 200,
+                      child: Column(
+                        children: [
+                          TextField(
+                            onChanged: (value) {
+                              title = value;
+                            },
+                            decoration: InputDecoration(labelText: '제목'),
+                          ),
+                          TextField(
+                            onChanged: (value) {
+                              description = value;
+                            },
+                            decoration: InputDecoration(labelText: '설명'),
+                          ),
+                        ],
+                      ),
+                    ),
+                    actions: [
+                      TextButton(
+                          onPressed: () {
+                            setState(() {
+                              print('[UI] ADD');
+                              todoDefault.addTodo(
+                                  Todo(title: title, description: description));
+                            });
+                            Navigator.of(context).pop();
+                          },
+                          child: Text('추가')),
+                      TextButton(
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                          child: Text('취소')),
+                    ],
+                  );
+                });
+          },
         ),
         body: isLoading
             ? Center(
